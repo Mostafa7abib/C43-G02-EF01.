@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using Demo.Contexts;
 using static Demo.ListGenerator;
 namespace Demo
 {
@@ -107,17 +108,22 @@ namespace Demo
             #endregion
 
             #region Video 05 - Let&Into
-            var Names = new List<string>() { "Omar", "Ahmed", "Rana", "Mai", "Mohammed" };
-            var result = from n in Names
-                         select Regex.Replace(n, "[aeiouAEIOU]", string.Empty)
-                         into noVowels
-                         where noVowels.Length > 3
-                         select noVowels;
-            result = Names.Select(n => Regex.Replace(n, "[aeiouAEIOU]", string.Empty)).Where(n => n.Length > 3);
-            foreach (var item in result)
-            {
-                Console.WriteLine(item);
-            }
+            //var Names = new List<string>() { "Omar", "Ahmed", "Rana", "Mai", "Mohammed" };
+            //var result = from n in Names
+            //             select Regex.Replace(n, "[aeiouAEIOU]", string.Empty)
+            //             into noVowels
+            //             where noVowels.Length > 3
+            //             select noVowels;
+            //result = Names.Select(n => Regex.Replace(n, "[aeiouAEIOU]", string.Empty)).Where(n => n.Length > 3);
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Video 06 - 
+            EnterPriseDbContext dbContext = new EnterPriseDbContext();
+
             #endregion
         }
     }
